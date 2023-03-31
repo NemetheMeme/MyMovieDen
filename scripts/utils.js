@@ -46,7 +46,7 @@ const movieTemplate = (movieDetail)=>{
 
         <div id ="about-wrapper">
         <p class ="movie-title">${movieDetail.Title}</p>
-        <div class="label">${movieDetail.Released} | ${movieDetail.Runtime}<img class="item-poster" src = "time2.png"></div>
+        <div class="label">${movieDetail.Released} | ${movieDetail.Runtime}<img class="item-poster" src = "pictures/time2.png"></div>
         <p>${movieDetail.Plot}</p>
         <div class ="rating-wrapper"><span class="rating"><b>${movieDetail.imdbRating}</b></span>/10  with ${movieDetail.imdbVotes} Votes</div>
         ${renderMetascore(movieDetail.Metascore)}
