@@ -1,0 +1,25 @@
+{
+  "name": "mymovieden",
+  "version": "1.0.0",
+  "main": "web_server.js",
+  "scripts": {
+    "dev": "nodemon controller/web_server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NemetheMeme/MyMovieDen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NemetheMeme/MyMovieDen/issues"
+  },
+  "homepage": "https://github.com/NemetheMeme/MyMovieDen#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.22"
+  }
+}
