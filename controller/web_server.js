@@ -3,14 +3,13 @@ const router = express.Router();
 const app = express();
 const db = require('../database/database_connection.js');
 
-// router.get('/users', (req, res) => {
-//   const sql = 'SELECT * FROM users';
 
-//   db.query(sql, (err, result) => {
-//     if (err) throw err;
-//     res.json(result);
-//   });
+// db.query('SELECT * FROM users', (err,result)=>{
+// console.log(JSON.stringify(result));
 // });
+app.post('', (req,res) =>{
+
+});
 
 module.exports = router;
 console.log('listening...');

@@ -1,15 +1,15 @@
-// const mysql = require('mysql');
+const mysql = require('mysql2');
 
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'your_username',
-//   password: 'your_password',
-//   database: 'your_database_name'
-// });
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'password123',
+  database: 'mymoviedendatabase'
+});
 
-// connection.connect((err) => {
-//   if (err) throw err;
-//   console.log('Connected to MySQL database!');
-// });
+connection.connect((err) => {
+  if (err) console.log(err);
+  console.log('Connected to MySQL database!');
+});
 
-// module.exports = connection;
+module.exports = connection;

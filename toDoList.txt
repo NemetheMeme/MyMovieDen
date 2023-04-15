@@ -1,0 +1,18 @@
+To do list My Movie Den App
+
+Backend:
+MySql Database Connection (Done)
+Think and implement proper sql tables
+User Repository
+Movie Repository
+Manage Database Mappings
+
+Frontend:
+Add button for logging in
+Add "Add to Favorites" button for logged in sessions
+Add "Log Out" button for logged in sessions
+
+Sign In Page
+Sign Out Page
+Favorite movies Page
+Small changes on Main Page on logged session
