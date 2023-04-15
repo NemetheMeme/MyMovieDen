@@ -2,10 +2,10 @@ To do list My Movie Den App
 
 Backend:
 MySql Database Connection (Done)
-Think and implement proper sql tables
+Think and implement proper sql tables (Done)
+Manage Database Mappings (Done)
 User Repository
 Movie Repository
-Manage Database Mappings
 
 Frontend:
 Add button for logging in
@@ -16,3 +16,20 @@ Sign In Page
 Sign Out Page
 Favorite movies Page
 Small changes on Main Page on logged session
+
+
+
+
+--------------
+DB Tables Structure:
+User: 
+Id, Email, EncryptedPassword, Username
+Email - primary key, Id, Primary and foreign key
+
+Movie:
+Id , IBDM_ID , name
+
+Many-to-Many Mapping: Each entity can have multiple records of the other type
+relationship_key_mapping table will have  movie.id and user.id that references to 
+the id's of the other two tables
+
