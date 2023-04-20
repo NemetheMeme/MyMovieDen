@@ -4,8 +4,9 @@ Backend:
 MySql Database Connection (Done)
 Think and implement proper sql tables (Done)
 Manage Database Mappings (Done)
-User Repository (Done)
-Movie Repository(In progress)
+User Repository (Done) |  Might need some refactoring
+Movie Repository(Done) | Might need some refactoring
+User-Movie Relationship Repository(In progress)
 
 Frontend:
 Add button for logging in

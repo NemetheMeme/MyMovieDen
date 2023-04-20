@@ -3,6 +3,8 @@ const router = express.Router();
 const app = express();
 const bodyParser = require('body-parser');
 const userService = require('../service/user_service');
+const movieService = require('../service/movie_service');
+const relationshipRepositoryTest = require('../database/repository/movie_user_relationship');
 
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -35,4 +37,33 @@ app.post('/signin',(req,res)=>{
 </form>`);
 });
 
+app.get('/movie', (req,res)=>{
+
+res.send(`
+<form id = "movie" action = "/movie" method = "POST">
+<input name = "name" type="text"  placeholder="movieName">
+<input name = "IDBM_ID" type="text" placeholder="IDMB ID">
+<input type = "submit" class="submit-add-movie" value="Add Movie">
+`);
+});
+
+app.post('/movie', (req,res)=>{
+    movieService.addMovieRequest(req.body);
+    res.send(`Movie Added`);
+});
+
+
+app.get('/addFavoriteMovie', (req,res)=>{
+    res.send(`
+    <form id = "movie" action = "/addFavoriteMovie" method = "POST">
+    <input name = "email" type="text"  placeholder="User email">
+    <input name = "name" type="text" placeholder="Movie name">
+    <input type = "submit" class="submit-add-favorite-movie" value="Add favorite Movie">
+    `);
+});
+
+// prototype that uses name of movie and email of user
+app.post('/addFavoriteMovie', (req,res)=>{
+  relationshipRepositoryTest.addTest(req.body, req.body); 
+});
 module.exports = router;

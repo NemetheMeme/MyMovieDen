@@ -36,6 +36,22 @@ class UsersRepository{
          );
        });
     }
+
+    async getUserByID(user_ID){
+      return new Promise((resolve, reject) => {
+        connection.query(
+          `SELECT * FROM ${table} WHERE ID = ?`,
+          [user_ID],
+          (err, results, fields) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(results);
+            }
+          }
+        );
+      });
+    }
 }
 
 //export an instance of the class
