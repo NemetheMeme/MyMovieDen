@@ -1,0 +1,156 @@
+.red {
+color: #ff0000;
+}
+
+.yellow {
+color: #fff700;
+}
+
+.green {
+color : #2bff00;
+}
+
+.cyan {
+color : #41c8c6;
+}
+
+.orange{
+color: #ff751a;
+}
+
+.dark-blue{
+color: #272869;
+}
+
+.section-delimiter{
+border: 1px solid white;
+}
+
+.delimiter{
+display: inline-block;
+height: auto;
+width: 3em;
+visibility: hidden;
+}
+
+.person-delimiter{
+display: inline-block;
+height: 0;
+width: 1em;
+visibility: hidden;
+}
+
+.award-size{
+    font-size: 1.5em;
+}
+
+#movie-template-background{
+ background-image: url("/pic/blurred-background-movie-preview.jpg");
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+ /* GENRE RENDER ----------------------------------------------------*/
+.genre-wrapper{
+    width:auto;
+    height: auto;
+    flex-wrap: wrap;
+    margin: 0.75em;
+    flex-direction: row;
+}
+
+.genre{
+    width: auto;
+    height: auto;
+    padding: 0.25em 0.5em;
+    margin : 0.25em;
+    border-radius: 1em;
+    border: 1px solid white;
+    color: white;
+
+    transition: 0.3s ease-out;
+
+}
+
+.genre:hover{
+    background-color: white;
+    opacity: 0.6;
+    color: black;
+    transition: 0.3s ease-out;
+}
+
+ /*AWARDS RENDER ----------------------------------------------------*/
+.awards-wrapper{
+    height: auto;
+    width: 50%;
+    flex-wrap: wrap;
+    background-color: white;
+box-shadow: -21px 23px 0px -2px rgba(255,255,255,0.22);
+-webkit-box-shadow: -21px 23px 0px -2px rgba(255,255,255,0.22);
+-moz-box-shadow: -21px 23px 0px -2px rgba(255,255,255,0.22);
+}
+
+.awards{
+    color: black;
+}
+
+#favourite-button-sizing{
+height : 3em;
+}
+
+
+
+.wrapper {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/*      CHECKBOX         */
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 35px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input[type="checkbox"] + label:before {
+    content: "\1F5A4";
+    top: -11px;
+    left: -8px;
+    border: 1px solid transparent;
+    padding: 10px;
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+	transition:  .5s ease;
+}
+
+
+
+input[type="checkbox"]:checked + label:before {
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+input[type="checkbox"]:checked + label:after {
+    content: '\1F49B';
+    font-size: 18px;
+    position: absolute;
+    top: -1px;
+    left: 1px;
+	color: #FF0000;
+	transition:  .5s ease;
+}
+/*                       */
+
