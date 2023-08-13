@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{login.page.title}">Login Page</title>
+    <link rel="stylesheet" th:href="@{/css/custom/home.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chela+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+</head>
+<body>
+<!--style="background-color: #9A616D;"-->
+<section class="vh-100 bg-secondary">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block" style="position: relative;">
+                            <img src="pic/home-side-picture.jpeg"
+                                 alt="login form" class="img-fluid"
+                                 style="border-radius: 1rem 0 0 1rem; height: 100%;"/>
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+
+                                <form
+                                        class="user"
+                                        method="post"
+                                        role="form"
+                                        th:action="@{/login}">
+
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <img src="/pic/movie-camera.png" class="icon">
+                                        <span class="h1 fw-bold mb-0">MyMovieDen</span>
+                                    </div>
+
+                                    <div th:if="${param.error}">
+                                        <div class="alert alert-danger">Invalid Email or Password</div>
+                                    </div>
+
+                                    <h5  class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"
+                                        th:text="#{login.page.text}">Sign into your account</h5>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="email" class="form-control form-control-lg"
+                                               name="username"
+                                               id="username"/>
+                                        <label class="form-label" for="username" th:text="#{login.page.email_text}">Email
+                                            address</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" class="form-control form-control-lg"
+                                               name="password"
+                                               id="password"/>
+                                        <label class="form-label" for="password" th:text="#{login.page.password_text}">Password</label>
+                                    </div>
+
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-dark btn-lg btn-block" type="submit"
+                                                th:text="#{button.sign_in}">Login
+                                        </button>
+                                    </div>
+
+                                    <div class="mb-5 pb-lg-2" style="color: #393f81;">
+                                        <p th:text="#{login.page.no_account}">Don't have an account?</p>
+                                        <a href="/sign_up" style="color: #393f81;"
+                                           th:text="#{login.page.register_here}">Register here</a>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+<script th:src="@{/js/api.js}"></script>
+<script th:src="@{/js/utils.js}"></script>
+<script th:src="@{/js/home.js}"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script th:src="@{/js/bootstrap/js/bootstrap.min.js}"></script>
+</html>

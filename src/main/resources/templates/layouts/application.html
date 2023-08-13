@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>MyMovieDen</title>
+    <link rel="stylesheet" th:href="@{/css/custom/home.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/custom/styles.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/custom/basic_styles.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/custom/favorite_card_styles.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/custom/movie_template_styles.css}" , type=" text/css">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css}">
+    <link rel="stylesheet"
+          th:href="@{https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chela+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+</head>
+<body>
+<span th:replace="~{fragments/header :: header}"></span>
+<div layout:fragment="content"></div>
+<span th:replace="~{fragments/footer :: footer}"></span>
+</body>
+
+<script th:src="@{../js/api.js}"></script>
+<script th:src="@{../js/utils.js}"></script>
+<script th:src="@{../js/home.js}"></script>
+<script th:src="@{../js/favorite_movie.js}"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script th:src="@{../js/bootstrap/js/bootstrap.min.js}"></script>
+</html>

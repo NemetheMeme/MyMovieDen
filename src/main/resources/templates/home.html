@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/application}" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie Den</title>
+</head>
+<body>
+<div class = "full-page-container"   layout:fragment="content">
+        <div class = "background-shape-gradient">
+            <div class=" background-outside-wrapper">
+                <div class = "shape-gradient-text-wrapper">
+                    <h1 class = "font-family-chela-one" th:text = "${user_username + ' Movie Den'}">My Movie Den</h1>
+                    <span class = "font-family-architechts-daughter"> Discover new stories and </span>
+                    <span class = "font-family-architechts-daughter"> create your own warm movie den.</span>
+                </div>
+            </div>
+        </div>
+        <img src = "pic/background.jpeg" class = "img-background">
+    </div>
+</body>
+</html>

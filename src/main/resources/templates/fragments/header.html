@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark" th:fragment="header">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light"
+           th:href="@{/home}"
+           sec:authorize="isAuthenticated()">
+            <img class="icon" alt="MyMovieDen Logo"
+                 th:src="@{/pic/movie-camera.png}"
+                 th:text = "${user_username + ' Movie Den'}">
+        </a>
+        <a class="navbar-brand text-light"
+           th:href="@{/home}"
+           sec:authorize="!isAuthenticated()">
+            <img class="icon" alt="MyMovieDen Logo"
+                 th:src="@{/pic/movie-camera.png}"
+                 th:text = "${user_username + 'MovieDen'}">
+        </a>
+
+        <form class="d-flex col-5 dropdown" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control rounded search-bar" id="movieInput"
+                       th:placeholder="#{search.movie_name}" data-bs-toggle="dropdown" aria-expanded="true">
+                <ul class="dropdown-menu dropdown-menu-max-height col-12" aria-labelledby="movieInput"
+                    data-bs-auto-close="true"></ul>
+            </div>
+        </form>
+
+        <div sec:authorize="!isAuthenticated()">
+            <button class="btn btn-light" type="button" th:text="#{button.sign_in}"
+                    onclick="window.location.href='/login'"></button>
+            <button class="btn btn-light" type="button" th:text="#{button.sign_up}"
+                    onclick="window.location.href='/sign_up'"></button>
+        </div>
+
+        <div sec:authorize="isAuthenticated()">
+            <button class="btn btn-light" type="button" th:text="#{button.favorites}"
+                    onclick="window.location.href='/favorites'"></button>
+            <button class="btn btn-light" type="button" th:text="#{button.logout}"
+                    onclick="window.location.href='/logout'"></button>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
