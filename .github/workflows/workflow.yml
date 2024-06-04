@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs: 
       DEPLOY_TO_PROD:
-      required: false
+        required: false
 env: 
   DEPY_TO_PROD: ${{ github.event.inputs.DEPLOY_TO_PROD }}
 
