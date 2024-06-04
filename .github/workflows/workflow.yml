@@ -1,0 +1,26 @@
+name: Workflow
+
+on: 
+  workflow_dispatch:
+    inputs: 
+      DEPLOY_TO_PROD:
+      required: false
+env: 
+  DEPY_TO_PROD: ${{ github.event.inputs.DEPLOY_TO_PROD }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: write text
+        run: |
+          if [ ${{ github.ref_name }} == 'main' ] && [ ${{ env.DEPLOY_TO_PROD }} == 'PROD' ]; then
+            echo "GHP_IMAGE=repo-prod" >> "$GITHUB_ENV"
+          elif [ "${{ github.ref_name }}" == 'main' ]; then
+            echo "GHP_IMAGE=repo-int" >> "$GITHUB_ENV"
+          elif [ "${{ github.ref_name }}" == 'dev' ]; then
+            echo "GHP_IMAGE=repo-test" >> "$GITHUB_ENV"
+          fi
+      - name: display text
+        run: echo ${{ env.GHP_IMAGE }}
+  
