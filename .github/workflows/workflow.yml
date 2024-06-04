@@ -6,7 +6,7 @@ on:
       DEPLOY_TO_PROD:
         required: false
 env: 
-  DEPY_TO_PROD: ${{ github.event.inputs.DEPLOY_TO_PROD }}
+  DEPLOY_TO_PROD: ${{ github.event.inputs.DEPLOY_TO_PROD }}
 
 jobs:
   test:
